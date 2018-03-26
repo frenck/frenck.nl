@@ -1,0 +1,29 @@
+{{ $paginator := .Paginate (where .Data.Pages "Section" "in" "post") }}
+{{ range $paginator.Pages }}
+<article class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
+        <a href="{{ .Permalink }}" itemprop="url">
+            <img src="{{ .Params.banner | absURL }}" class="article-banner">
+        {{ end }}
+        </a>
+
+        {{ partial "article_header" . }}
+        <div class="article-entry" itemprop="articleBody">
+            <p>
+                {{ .Summary }}
+            </p>
+            <p class="article-more-link">
+                <a href="{{ .Permalink }}">
+                    <i class="fas fa-hand-point-right"></i>
+                    Read the rest of this AWESOME article... 
+                    <i class="fas fa-hand-point-left"></i>
+                </a>
+            </p>
+        </div>
+        {{ partial "article_footer" . }}
+    </div>
+</article>
+{{ end }}
+
+{{ partial "pagination" . }}

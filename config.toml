@@ -1,0 +1,68 @@
+baseurl = "https://www.frenck.nl/"
+title = "Frenck's Home"
+footnotereturnlinkcontents = "↩"
+enableRobotsTXT = true
+canonifyURLs = true
+enableEmoji = true
+enableGitInfo = true
+languageCode = "en"
+metaDataFormat = "yaml"
+summaryLength = 70
+
+[blackfriday]
+    hrefTargetBlank = true
+
+[permalinks]
+    post = "/:sections/:slug"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  series = "series"
+
+[related]
+    threshold = 80
+    includeNewer = true
+    toLower = true
+
+[[related.indices]]
+    name = "keywords"
+    weight = 100
+
+[[related.indices]]
+    name  = "author"
+    weight = 0
+
+[[related.indices]]
+    name  = "tags"
+    weight = 150
+
+[[related.indices]]
+    name  = "date"
+    weight = 25
+    pattern = "2006"
+
+[sitemap]
+    changefreq = "monthly"
+    priority = 0.5
+    filename = "sitemap.xml"
+
+[params]
+
+# Create custom menu entries by defining a label and a link for
+# them. Since you can also link posts, you've the option the
+# place the links before or after them.
+#
+# E.g.: "Home" appears before all linked posts in the menu
+# and "Tags" / "Categories" after them.
+[[params.menu]]
+    before = true
+    label  = "Home"
+    link   = "/"
+
+[[menu.main]]
+    name = "About me"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "about"
+    url = "/about/"

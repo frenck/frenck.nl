@@ -1,0 +1,9 @@
+<div class="article-gallery">
+    <div class="article-gallery-photos">
+        {{ range .Params }}
+        <a class="article-gallery-img" data-fancybox data-type="image" data-fancybox="group" href="{{ . }}">
+            <img src="{{ . | absURL }}">
+        </a>
+        {{ end }}
+    </div>
+</div>

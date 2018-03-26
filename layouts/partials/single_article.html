@@ -1,0 +1,32 @@
+<article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
+            <img src="{{ .Params.banner | absURL }}" class="article-banner">
+        {{ end }}
+
+        {{ partial "article_header" . }}
+        <div class="article-entry" itemprop="articleBody">
+            {{ .Content }}
+        </div>
+        {{ partial "article_footer" . }}
+    </div>
+
+    {{ partial "prev_next_post" . }}
+</article>
+
+{{ if (not .Params.disable_comments) }}
+<section id="comments">
+    <div id="gh-comments">
+        <br/><br/>
+        <h6>COMMENTS</h6>
+        <div id="gh-comments-list"></div>
+        <a href="javascript:void(0)" id="gh-load-comments" class="btn" style="display:none">Load more comments</a>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function ()
+        {
+            DoGithubComments("{{$.Params.ghcommentid}}");
+        });
+    </script>
+</section>
+{{ end }}

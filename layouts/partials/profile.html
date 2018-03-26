@@ -1,0 +1,50 @@
+<aside id="profile">
+  <div class="inner profile-inner">
+    <div class="base-info profile-block">
+      <img id="avatar" src="/images/avatar-128x128.jpg">
+      <h2 id="name">Franck Nijhof</h2>
+      <h3 id="title">#HomeAssistant enthusiast, Hass.io add-on creator, #IoT explorer, #DevOps preacher, #GPG evangelist, slightly assholic at first sight</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>Enschede, The Netherlands</span>
+      <a id="follow" href="//twitter.com/frenck">
+          Follow me on <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+    <div class="article-info profile-block">
+      <div class="article-info-block">
+        {{ len (where .Site.RegularPages "Type" "post") }}
+        <span>Posts</span>
+      </div>
+      <div class="article-info-block">
+        {{ if isset .Site.Taxonomies "tags" }}
+          {{ len .Site.Taxonomies.tags }}
+        {{ else }}
+          0
+        {{ end }}
+        <span>
+            Tags
+        </span>
+      </div>
+    </div>
+    <div class="profile-block social-links">
+      <table>
+        <tr>
+          <td><a href="//github.com/frenck" target="_blank" title="GitHub" rel="external nofollow"><i class="fab fa-github"></i></a></td>
+          <td><a href="//linkedin.com/in/frenck" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></td>
+          <td><a href="//reddit.com/user/frenck_nl" target="_blank" title="Reddit"><i class="fab fa-reddit"></i></a></td>
+          <td><a href="//facebook.com/frenck.nl" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></td>
+          <td><a href="//twitter.com/frenck" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></td>
+          <td><a href="//community.home-assistant.io/u/frenck" target="_blank" title="Home Assistant Community Forums"><i class="fab fa-discourse"></i></a></td></td>
+          <td><a href="//keybase.io/frenck" target="_blank" title="Keybase"><i class="fa fa-key"></i></a></td>
+          <td><a href="{{ .Site.RSSLink }}" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="profile-block gpg" style="height: 64px;">
+      <img src="/images/gnupg.png" style="float: left;">
+      <div style="text-align: center; margin-top: 15px">
+        My public GPG key:
+        <a href="https://gnupg.pub/pks/lookup?op=get&search=0xAB33ADACE7101952" target="_blank">0xab33adace7101952</a>
+      </div>
+    </div>
+  </div>
+</aside>
