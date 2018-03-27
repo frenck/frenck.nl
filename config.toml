@@ -1,5 +1,5 @@
 baseurl = "https://www.frenck.nl/"
-title = "Frenck's Home"
+title = "Frenck.nl"
 footnotereturnlinkcontents = "↩"
 enableRobotsTXT = true
 canonifyURLs = true
