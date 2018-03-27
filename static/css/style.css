@@ -2174,6 +2174,13 @@ ol.toc {
   margin-right: 5px;
   margin-top: 20px;
 }
+.archive-article-inner {
+  display:grid;
+  padding:0px;
+  grid-gap: 15px;
+  grid-template-columns: 150px 1fr;
+}
+
 /*
 Monokai style - ported by Luigi Maselli - http://grigio.org
 */
