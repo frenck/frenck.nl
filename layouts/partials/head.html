@@ -16,15 +16,12 @@
       <link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
     {{ end }}
     <link rel="canonical" href="{{ .Permalink }}"/>
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}"/>
-    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
-    <link rel="stylesheet" href="{{ "css/fontawesome.min.css" | absURL }}">
-    <link rel="stylesheet" href="{{ "css/jquery.fancybox.min.css" | absURL }}">
-
-    {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-    {{ end }}
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}"/>
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/fontawesome.min.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/jquery.fancybox.min.css" | relURL }}">
+    <script src="{{ "js/jquery.min.js" | relURL }} "></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
     {{ template "_internal/opengraph.html" . }}
@@ -39,9 +36,6 @@
         }
     </style>
     {{ end }}
-
-    <!-- needs to be loaded first for following scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -1,12 +1,12 @@
 <nav id="page-nav">
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     {{ if .Paginator.HasPrev }}
-        <a class="extend prev" rel="prev" href="{{ .Paginator.Prev.URL | absURL }}">
+        <a class="extend prev" rel="prev" href="{{ .Paginator.Prev.URL | relURL }}">
             « Previous
         </a>
     {{ end }}
     {{ if .Paginator.HasNext }}
-        <a class="extend next" rel="next" href="{{ .Paginator.Next.URL | absURL }}">
+        <a class="extend next" rel="next" href="{{ .Paginator.Next.URL | relURL }}">
             Next »
         </a>
     {{ end }}

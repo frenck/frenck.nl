@@ -9,7 +9,7 @@
                 <div class="item-thumbnail">
                     <a href="{{ .Permalink }}" class="thumbnail">
                     {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
-                        <span style="background-image:url({{ .Params.banner | absURL }})" alt="{{ $.Title }}" class="thumbnail-image"></span>
+                        <span style="background-image:url({{ .Params.banner | relURL }})" alt="{{ $.Title }}" class="thumbnail-image"></span>
                     {{else}}
                         <span class="thumbnail-image thumbnail-none"></span>
                     {{ end }}
@@ -20,7 +20,7 @@
                     {{ if gt (len .Params.categories) 0 }}
                     <p class="item-category">
                         {{ $url := printf "%s/%s" "categories" (index .Params.categories 0 | urlize | lower)}}
-                        <a class="article-category-link" href="{{ $url | absURL }}">
+                        <a class="article-category-link" href="{{ $url | relURL }}">
                         {{ index .Params.categories 0 }}
                         </a>
                     </p>
