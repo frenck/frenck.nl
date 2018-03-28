@@ -30,8 +30,8 @@ How nice of you to drop by and showing an interest in my human existence
 
 I'm Frenck, and I mainly write about the IoT (Internet of Things) and Home
 Automation :house_with_garden:. Come with me on my domotics adventure that
-turns my house into a real smart home that has, most importantly,
-meets all the WAF (Wife Approval Rate) guidelines and
+turns my house into a real smart home that, most importantly,
+meets all the WAF (Wife Approval Factor) guidelines and
 scores high WAR (Wife Approval Rate) scale :ok_woman:.
 
 I use Home Assistant as my home automation system, which is built with the
