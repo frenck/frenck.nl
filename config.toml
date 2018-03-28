@@ -65,4 +65,4 @@ summaryLength = 70
     pre = "<i class='fa fa-heart'></i>"
     weight = -110
     identifier = "about"
-    url = "/about/"
+    url = "/about/franck-nijhof"
