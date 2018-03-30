@@ -1,0 +1,52 @@
+https://keybase.io/frenck
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.frenck.nl
+  * I am frenck (https://keybase.io/frenck) on keybase.
+  * I have a public key ASCvsUxm3bbdZbaDll9qRZFQ7TyfXEyPtaSeltOVS57f1Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120130ed357558eb0a5eac77c78208641c9c12dcd703d5c49d2e034ee5d69b321030a",
+      "host": "keybase.io",
+      "kid": "0120afb14c66ddb6dd65b683965f6a459150ed3c9f5c4c8fb5a49e96d3954b9edfd50a",
+      "uid": "1d869a86cd206fc09aaafc6f153a4419",
+      "username": "frenck"
+    },
+    "merkle_root": {
+      "ctime": 1522443889,
+      "hash": "366c9732104917dba1c6181fc2c33cae8d63b0bce34d80b704226e7c5c47fdea7308fcaa195c9af5edbebb95777120a70724a9271f1f5f601bbc80bb4c308041",
+      "hash_meta": "847da2ed8df8377bd69e4fd1a9b6d1cbcfabb14293c8cf7bd04fb4fb3e6fef4b",
+      "seqno": 2314129
+    },
+    "service": {
+      "hostname": "www.frenck.nl",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.45"
+  },
+  "ctime": 1522443919,
+  "expire_in": 504576000,
+  "prev": "92e052588d4bb498ad51190a43b0f4a6ea22312f2b54d7544e30bca89e800e6a",
+  "seqno": 53,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgr7FMZt223WW2g5ZfakWRUO08n1xMj7WknpbTlUue39UKp3BheWxvYWTFA0R7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMTMwZWQzNTc1NThlYjBhNWVhYzc3Yzc4MjA4NjQxYzljMTJkY2Q3MDNkNWM0OWQyZTAzNGVlNWQ2OWIzMjEwMzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYWZiMTRjNjZkZGI2ZGQ2NWI2ODM5NjVmNmE0NTkxNTBlZDNjOWY1YzRjOGZiNWE0OWU5NmQzOTU0YjllZGZkNTBhIiwidWlkIjoiMWQ4NjlhODZjZDIwNmZjMDlhYWFmYzZmMTUzYTQ0MTkiLCJ1c2VybmFtZSI6ImZyZW5jayJ9LCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTUyMjQ0Mzg4OSwiaGFzaCI6IjM2NmM5NzMyMTA0OTE3ZGJhMWM2MTgxZmMyYzMzY2FlOGQ2M2IwYmNlMzRkODBiNzA0MjI2ZTdjNWM0N2ZkZWE3MzA4ZmNhYTE5NWM5YWY1ZWRiZWJiOTU3NzcxMjBhNzA3MjRhOTI3MWYxZjVmNjAxYmJjODBiYjRjMzA4MDQxIiwiaGFzaF9tZXRhIjoiODQ3ZGEyZWQ4ZGY4Mzc3YmQ2OWU0ZmQxYTliNmQxY2JjZmFiYjE0MjkzYzhjZjdiZDA0ZmI0ZmIzZTZmZWY0YiIsInNlcW5vIjoyMzE0MTI5fSwic2VydmljZSI6eyJob3N0bmFtZSI6Ind3dy5mcmVuY2submwiLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC40NSJ9LCJjdGltZSI6MTUyMjQ0MzkxOSwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiI5MmUwNTI1ODhkNGJiNDk4YWQ1MTE5MGE0M2IwZjRhNmVhMjIzMTJmMmI1NGQ3NTQ0ZTMwYmNhODllODAwZTZhIiwic2Vxbm8iOjUzLCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQI/zn94VZ7VU0OrcycYgd+YjT8JR0adEkcWThhYplDeUamHaYDlYCB1k720jYK8N70lYRB6zuIj3UusvdbWdlAyoc2lnX3R5cGUgpGhhc2iCpHR5cGUIpXZhbHVlxCA2c1kW8aoBvIw+WwR7rL+tEd+mGKTnKrJg0V/T4svMP6N0YWfNAgKndmVyc2lvbgE=
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/frenck
