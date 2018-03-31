@@ -34,23 +34,12 @@
             ]    
         },
         "publisher": {
-            "@type": "Person",
+            "@type": "Organization",
             "name": "{{ .Site.Params.author }}",
-            "familyName": "{{ .Site.Params.familyName }}",
-            "givenName": "{{ .Site.Params.givenName }}",
-            "alternateName": "{{ .Site.Params.nickName }}",
-            "email": "mailto:{{ .Site.Params.email }}",
-            "image": "{{ .Site.Params.avatar | absURL }}",
-            "url": "{{ .Site.BaseURL }}",
-            "sameAs": [
-                "https://github.com/{{ .Site.Social.github }}",
-                "https://linkedin.com/in/{{ .Site.Social.linkedin }}",
-                "https://reddit.com/user/{{ .Site.Social.reddit }}",
-                "https://facebook.com/{{ .Site.Social.facebook }}",
-                "https://twitter.com/{{ .Site.Social.twitter }}",
-                "https://keybase.io/{{ .Site.Social.keybase }}",
-                "https://plus.google.com/+{{ .Site.Social.googleplus }}"
-            ]
+            "logo": {
+              "@type": "imageObject",
+              "url": "{{ .Site.Params.avatar | absURL }}"
+            }
         },
         "headline": "{{ .Params.seoTitle | default .Title }}",
         "description": "{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.defaultDescription }}{{ . }}{{ end }}{{ end }}{{ end }}",
