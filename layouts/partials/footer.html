@@ -3,7 +3,7 @@
     <div id="footer-info" class="inner">
       &copy; {{ now.Format "2006"}} by {{ .Site.Params.author }} 
       {{- with .GitInfo -}}
-      <br>Commit: {{ emojify .Subject }} <a href="https://github.com/frenck/frenck.nl/commit/{{ .AbbreviatedHash }}" title="View latest commit on GitHub">{{ .AbbreviatedHash }}</a>
+      <br>Latest change: {{ emojify .Subject }} <a href="https://github.com/frenck/frenck.nl/commit/{{ .AbbreviatedHash }}" title="View latest commit on GitHub">{{ .AbbreviatedHash }}</a>
       {{- end -}}
     </div>
   </div>
