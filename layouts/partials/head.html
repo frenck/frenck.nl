@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>{{ .Params.seoTitle | default .Site.Params.defaultTitle }} | {{ .Site.Title }}</title>
-    <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">    
-    <meta name="author" content="{{ .Site.Params.author }}">
+    <title>{{ .Params.seoTitle | default .Site.Params.defaultTitle | emojify }} | {{ .Site.Title }}</title>
+    <base href="{{ if getenv "CONTEXT" }}{{ cond (eq "production" (getenv "CONTEXT")) (getenv "URL") (getenv "DEPLOY_PRIME_URL") }}{{ else }}{{ $.Site.BaseURL }}{{ end }}">
     {{- partial "meta/seo.html" . -}}
     {{- partial "meta/google.html" . -}}
     {{- partial "meta/twitter_card.html" . -}}

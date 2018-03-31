@@ -1,6 +1,5 @@
 ---
 title: So Frenck... Who are you?!
-linktitle: About me
 date: "2018-03-26T21:49:20+02:00"
 lastmod: "2018-03-26T21:46:20+02:00"
 disable_comments: true

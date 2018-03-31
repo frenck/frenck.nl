@@ -1,5 +1,4 @@
 <meta name='medium' content='blog'>
-<meta name="description" content="{{ .Description | default .Site.Params.defaultDescription }}">
-{{- with (.Keywords | default .Site.Params.defaultKeywords) -}}
-<meta name="keywords" content="{{ range . }}{{ . }}, {{ end }}">
-{{- end -}}
+<meta name="author" content="{{ .Site.Params.author }}">
+<meta name="description" content="{{ .Description | default .Site.Params.defaultDescription | emojify }}">
+<meta name="keywords" content="{{ delimit (.Keywords | default .Site.Params.defaultKeywords) ", " }}">

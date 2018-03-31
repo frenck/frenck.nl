@@ -4,7 +4,9 @@ description: "Nothing yet..."
 title: "Nothing yet..."
 ghcommentid: 1
 type: post
-
+keywords:
+    - key1
+    - key2
 categories:
     - Home Asssitant
     - IoT

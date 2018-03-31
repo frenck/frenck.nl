@@ -1,3 +1,6 @@
 {{- partial "meta/structured/blog.html" . -}}
 {{- partial "meta/structured/breadcrumb.html" . -}}
 {{- partial "meta/structured/person.html" . -}}
+{{- if or (isset .Params "categories") (isset .Params "tags") -}}
+{{- partial "meta/structured/blogposting.html" . -}}
+{{- end -}}

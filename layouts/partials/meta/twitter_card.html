@@ -9,12 +9,12 @@
 {{- end -}}
 {{- end -}}
 {{- with .Params.seoTitle -}}
-<meta name="twitter:title" content="{{ . }}"/>
+<meta name="twitter:title" content="{{ emojify . }}"/>
 {{- else -}}
-<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:title" content="{{ emojify .Title }}"/>
 {{- end -}}
 <!-- TODO: Description fixes -->
-<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ emojify . }}{{ else }}{{if .IsPage}}{{ emojify .Summary }}{{ else }}{{ with .Site.Params.description }}{{ emojify . }}{{ end }}{{ end }}{{ end }}"/>
 <meta name="twitter:site" content="@{{ .Site.Social.twitter }}"/>
 <meta name="twitter:creator" content="@{{ .Site.Social.twitter }}"/>
 <meta name="twitter:domain" content="{{ .Site.Params.twitterDomain }}"/>
