@@ -1,29 +1,23 @@
-{{ $paginator := .Paginate (where .Data.Pages "Section" "in" "post") }}
-{{ range $paginator.Pages }}
-<article class="article article-type-post" itemscope="" itemprop="blogPost">
+{{- $paginator := .Paginate (where .Site.RegularPages "Type" "post") -}}
+{{- range $paginator.Pages -}}
+<article class="article article-type-post">
     <div class="article-inner">
-        {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
-        <a href="{{ .Permalink }}" itemprop="url">
-            <img src="{{ .Params.banner | relURL }}" class="article-banner">
-        {{ end }}
+        {{- if and (isset .Params "banner") (not (eq .Params.banner "")) -}}
+        <a href="{{ .Permalink }}" title="{{ .seoTitle | default .Title }}">
+            <img src="{{ .Params.banner | relURL }}" class="article-banner" alt="Banner showing {{ .Params.bannerTitle | default .Title }}" title="{{ .Params.bannerTitle | default .Title }}">
         </a>
-
-        {{ partial "article_header" . }}
-        <div class="article-entry" itemprop="articleBody">
-            <p>
-                {{ .Summary }}
-            </p>
-            <p class="article-more-link">
-                <a href="{{ .Permalink }}">
-                    <i class="fas fa-hand-point-right"></i>
-                    Continue reading... 
-                    <i class="fas fa-hand-point-left"></i>
-                </a>
-            </p>
-        </div>
-        {{ partial "article_footer" . }}
+        {{- end -}}
+        {{- partial "article_header" . -}}
+        <div class="article-entry"><p> 
+          {{- if .Truncated -}}
+            {{- .Summary -}}
+          {{- else -}}
+            {{- .Content -}}
+          {{- end -}}
+        </p></div>
+        {{- .Scratch.Set "articleList" true -}}
+        {{- partial "article_footer" . -}}
     </div>
 </article>
-{{ end }}
-
-{{ partial "pagination" . }}
+{{- end -}}
+{{- partial "pagination" . -}}

@@ -1,20 +1,21 @@
-<article id="page-undefined" class="article article-type-page" itemscope="" itemprop="blogPost">
+<article id="page-undefined" class="article article-type-page">
     <div class="article-inner">
-        {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
-            <img src="{{ .Params.banner | relURL }}" class="article-banner">
-        {{ end }}
+        {{- if and (isset .Params "banner") (not (eq .Params.banner "")) -}}
+            <img src="{{ .Params.banner | relURL }}" class="article-banner" alt="Banner showing {{ .Params.bannerTitle | default .Title }}" title="{{ .Params.bannerTitle | default .Title }}" class="article-banner">
+        {{- end -}}
 
-        {{ partial "article_header" . }}
-        <div class="article-entry" itemprop="articleBody">
-            {{ .Content }}
+        {{- partial "article_header" . -}}
+        <div class="article-entry">
+            {{- .Content -}}
         </div>
-        {{ partial "article_footer" . }}
+        {{- .Scratch.Set "articleList" false -}}
+        {{- partial "article_footer" . -}}
     </div>
 
-    {{ partial "prev_next_post" . }}
+    {{- partial "prev_next_post" . -}}
 </article>
 
-{{ if (not .Params.disable_comments) }}
+{{- if (not .Params.disable_comments) -}}
 <section id="comments">
     <div id="gh-comments">
         <br/><br/>
@@ -29,4 +30,4 @@
         });
     </script>
 </section>
-{{ end }}
+{{- end -}}

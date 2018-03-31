@@ -1,0 +1,10 @@
+/* ME */
+    Author: Franck Nijhof
+    Contact: hello [@t] frenck.nl
+    Twitter: @frenck
+    GitHub: @frenck
+    From: Enschede, The Netherlands
+
+/* SITE */
+    Language: English
+    Doctype: HTML5

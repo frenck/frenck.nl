@@ -1,13 +1,21 @@
 <footer class="article-footer">
-    <a data-url="{{ .Permalink }}" data-id="{{ .UniqueID }}" class="article-share-link">
-        <i class="fa fa-share"></i>
-        Share
+    {{- if or (not (.Scratch.Get "articleList")) (not .Truncated) -}}
+    <a href="{{.Site.Params.ghrepo}}/edit/master/content/{{.File.Path}}" rel="external nofollow" title="Edit this article on GitHub">
+        <i class="fa fa-edit"></i>Edit on GitHub  
     </a>
-    {{ if (not .Params.disable_comments) }}
-    <a href="{{ .Permalink }}#comments" class="article-comment-link">
+    {{- else -}}
+        <a href="{{ .Permalink }}" class="article-more-link" title="Click to read the rest of the article">
+            <i class="fas fa-hand-point-right"></i>Continue reading...<i class="fas fa-hand-point-left"></i>
+        </a>
+    {{- end -}}
+    <a data-url="{{ .Permalink }}" data-id="{{ .UniqueID }}" class="article-share-link" title="Share this article on social media">
+        <i class="fa fa-share"></i>Share
+    </a>
+    {{- if (not .Params.disable_comments) -}}
+    <a href="{{ .Permalink }}#comments" class="article-comment-link" title="Click to read the reactions on this article">
         Comments
     </a>
-    {{ end }}
+    {{- end -}}
 
     <script>
     (function ($) {
@@ -41,10 +49,10 @@
                     '<div id="' + id + '" class="article-share-box">',
                         '<input class="article-share-input" value="' + url + '">',
                         '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.reddit.com/submit?url=' + encodedUrl + '" class="fab fa-reddit article-share-reddit" target="_blank" title="Reddit"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Google+"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="//twitter.com/intent/tweet?url=' + encodedUrl + '" class="fab fa-twitter article-share-twitter" target="_blank" title="Share on Twitter" rel="external nofollow"></a>',
+                            '<a href="//www.reddit.com/submit?url=' + encodedUrl + '" class="fab fa-reddit article-share-reddit" target="_blank" title="Share on Reddit" rel="external nofollow"></a>',
+                            '<a href="//plus.google.com/share?url=' + encodedUrl + '" class="fab fa-google article-share-google" target="_blank" title="Share on Google+" rel="extenal nofollow"></a>',
+                            '<a href="//www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fab fa-facebook article-share-facebook" target="_blank" title="Share on Facebook" rel="external nofollow"></a>',
                         '</div>',
                     '</div>'
                 ].join('');

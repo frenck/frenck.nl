@@ -1,0 +1,3 @@
+---
+seoTitle: Frenck's Blog
+---

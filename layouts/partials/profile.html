@@ -1,49 +1,41 @@
 <aside id="profile">
   <div class="inner profile-inner">
     <div class="base-info profile-block">
-      <img id="avatar" src="/images/avatar-128x128.jpg" alt="Frenck / Franck Nijhof">
-      <h2 id="name">"Frenck"<br />Franck Nijhof</h2>
-      <h3 id="title">#HomeAssistant enthusiast, Hass.io add-on creator, #IoT explorer, #DevOps preacher, #GPG evangelist, slightly assholic at first sight</h3>
-      <span id="location"><i class="fa fa-map-marker"></i>Enschede, The Netherlands</span>
-      <a id="follow" href="//twitter.com/frenck">
+      <img id="avatar" src="{{ "/images/avatar-128x128.jpg" | relURL }}" alt="Photo of {{ .Site.Params.author }}" title="{{ .Site.Params.author }}">
+      <h2 id="name">"{{ .Site.Params.nickname }}"<br />{{ .Site.Params.author }}</h2>
+      <h3 id="title">{{ .Site.Params.bio }}</h3>
+      <span id="location"><i class="fa fa-map-marker"></i>
+        {{- .Site.Params.city -}}, {{ .Site.Params.country -}}
+      </span>
+      <a id="follow" href="//twitter.com/{{ .Site.Social.twitter }}" title="Follow {{ .Site.Params.author }} on Twitter">
           Follow me on <i class="fab fa-twitter"></i>
       </a>
-    </div>
-    <div class="article-info profile-block">
-      <div class="article-info-block">
-        {{ len (where .Site.RegularPages "Type" "post") }}
-        <span>Posts</span>
-      </div>
-      <div class="article-info-block">
-        {{ if isset .Site.Taxonomies "tags" }}
-          {{ len .Site.Taxonomies.tags }}
-        {{ else }}
-          0
-        {{ end }}
-        <span>
-            Tags
-        </span>
-      </div>
     </div>
     <div class="profile-block social-links">
       <table>
         <tr>
-          <td><a href="//github.com/frenck" target="_blank" title="GitHub" rel="external nofollow"><i class="fab fa-github"></i></a></td>
-          <td><a href="//linkedin.com/in/frenck" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a></td>
-          <td><a href="//reddit.com/user/frenck_nl" target="_blank" title="Reddit"><i class="fab fa-reddit"></i></a></td>
-          <td><a href="//facebook.com/frenck.nl" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a></td>
-          <td><a href="//twitter.com/frenck" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a></td>
-          <td><a href="//community.home-assistant.io/u/frenck" target="_blank" title="Home Assistant Community Forums"><i class="fab fa-discourse"></i></a></td></td>
-          <td><a href="//keybase.io/frenck" target="_blank" title="Keybase"><i class="fa fa-key"></i></a></td>
-          <td><a href="{{ .Site.RSSLink }}" target="_blank" title="RSS"><i class="fa fa-rss"></i></a></td>
+          <td><a href="//github.com/{{ .Site.Social.github }}" target="_blank" title="{{ .Site.Params.nickname }} on GitHub" rel="author external nofollow"><i class="fab fa-github"></i></a></td>
+          <td><a href="//twitter.com/{{ .Site.Social.twitter }}" target="_blank" title="{{ .Site.Params.nickname }} on Twitter" rel="author external nofollow"><i class="fab fa-twitter"></i></a></td>
+          <td><a href="//instagram.com/{{ .Site.Social.instagram }}" target="_blank" title="{{ .Site.Params.nickname }} on Instagram" rel="author external nofollow"><i class="fab fa-instagram"></i></a></td>
+          <td><a href="//plus.google.com/+{{ .Site.Social.googleplus }}" target="_blank" title="{{ .Site.Params.nickname }} on Google+" rel="author external nofollow"><i class="fab fa-google-plus"></i></a></td>
+          <td><a href="//community.home-assistant.io/u/{{ .Site.Social.discourse }}" target="_blank" title="{{ .Site.Params.nickname }} on the Home Assistant Community Forums" rel="author external nofollow"><i class="fab fa-discourse"></i></a></td></td>
+        </tr>
+        <tr>
+          <td><a href="//facebook.com/{{ .Site.Social.facebook }}" target="_blank" title="{{ .Site.Params.nickname }} on Facebook" rel="author external nofollow"><i class="fab fa-facebook"></i></a></td>
+          <td><a href="//linkedin.com/in/{{ .Site.Social.linkedin }}" target="_blank" title="{{ .Site.Params.nickname }} on LinkedIn" rel="author external nofollow"><i class="fab fa-linkedin"></i></a></td>
+          <td><a href="//reddit.com/user/{{ .Site.Social.reddit }}" target="_blank" title="{{ .Site.Params.nickname }} on Reddit" rel="author external nofollow"><i class="fab fa-reddit"></i></a></td>
+          <td><a href="//keybase.io/{{ .Site.Social.keybase }}" target="_blank" title="{{ .Site.Params.nickname }} on Keybase" rel="author external nofollow"><i class="fa fa-key"></i></a></td>
+          <td><a href="{{ .Site.RSSLink }}" target="_blank" title="RSS feed with the latest posts"><i class="fa fa-rss"></i></a></td>  
         </tr>
       </table>
     </div>
     <div class="profile-block gpg" style="height: 64px;">
-      <img src="/images/gnupg.png" style="float: left;">
+      <img src="{{ "/images/gnupg.png" | relURL }}" style="float: left;" alt="GnuPG Logo" title="{{ .Site.Params.author }} uses GPG">
       <div style="text-align: center; margin-top: 15px">
         My public GPG key:
-        <a href="https://gnupg.pub/pks/lookup?op=get&search=0xAB33ADACE7101952" target="_blank" title="GnuPG">0xab33adace7101952</a>
+        <a href="//gnupg.pub/pks/lookup?op=get&search=0x{{ .Site.Params.gpgkey }}" target="_blank" title="{{ .Site.Params.nickname }}'s GPG key" rel="author external nofollow">
+          0x{{ .Site.Params.gpgkey }}
+        </a>
       </div>
     </div>
   </div>

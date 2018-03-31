@@ -1,47 +1,41 @@
 <header class="article-header">
-    <a href="{{ .Permalink }}">
-    <h1 class="article-title" itemprop="name">
-        {{ .Title }}
-    </h1>
+    <a href="{{ .Permalink }}" title="{{ .Params.seoTitle | default .Title }}">
+        <h1 class="article-title">{{ .Title }}</h1>
     </a>
     <div class="article-meta">
-
-        {{ if not .Params.nodateline }}
+        {{- if not .Params.nodateline -}}
         <div class="article-date">
             <i class="fa fa-calendar"></i>
-            <time datetime="{{ .Date }}" itemprop="datePublished">{{ .Date.Format "2006-01-02" }}</time>
-            &middot;
-            {{ .WordCount }} words
-            &middot;
-            {{ .ReadingTime }} minute read
+            <time datetime="{{ .Date }}">{{ .Date.Format "2006-01-02" }}</time>
+            &middot; {{ .WordCount }} words &middot; {{ .ReadingTime }} minute read
         </div>
-        {{ end }}
-        {{ if isset .Params "categories" }}
-            {{ $categoriesLen := len .Params.categories }}
-            {{ if gt $categoriesLen 0 }}
+        {{- end -}}
+        {{- if isset .Params "categories" -}}
+            {{- $categoriesLen := len .Params.categories -}}
+            {{- if gt $categoriesLen 0 -}}
             <div class="article-category">
                 <i class="fa fa-folder"></i>
-                {{ range $k, $v := .Params.categories }}
-                {{ $url := printf "categories/%s" (. | urlize | lower) }}
-                <a class="article-category-link" href="{{ $url | relURL }}">{{ . }}</a>
-                {{ if lt $k (sub $categoriesLen 1) }}&middot;{{ end }}
-                {{ end }}
+                {{- range $k, $v := .Params.categories -}}
+                {{- $url := printf "categories/%s" (. | urlize | lower) -}}
+                <a class="article-category-link" href="{{ $url | relURL }}" title="View more artciles in {{ . }}">{{ . }}</a>
+                {{- if lt $k (sub $categoriesLen 1) -}}&middot;{{- end -}}
+                {{- end -}}
             </div>
-            {{ end }}
-        {{ end }}
+            {{- end -}}
+        {{- end -}}
 
-        {{ if isset .Params "tags" }}
-            {{ $tagsLen := len .Params.tags }}
-            {{ if gt $tagsLen 0 }}
+        {{- if isset .Params "tags" -}}
+            {{- $tagsLen := len .Params.tags -}}
+            {{- if gt $tagsLen 0 -}}
             <div class="article-category">
                 <i class="fa fa-tags"></i>
-                {{ range $k, $v := .Params.tags }}
-                {{ $url := printf "tags/%s" (. | urlize | lower) }}
-                <a class="article-category-link" href="{{ $url | relURL }}">{{ . }}</a>
-                {{ if lt $k (sub $tagsLen 1) }}&middot;{{ end }}
-                {{ end }}
+                {{- range $k, $v := .Params.tags -}}
+                {{- $url := printf "tags/%s" (. | urlize | lower) -}}
+                <a class="article-category-link" href="{{ $url | relURL }}" title="View more artciles tagged with {{ . }}">{{ . }}</a>
+                {{- if lt $k (sub $tagsLen 1) -}}&middot;{{- end -}}
+                {{- end -}}
             </div>
-            {{ end }}
-        {{ end }}
+            {{- end -}}
+        {{- end -}}
     </div>
 </header>

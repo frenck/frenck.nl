@@ -1,0 +1,67 @@
+<meta property="og:title" content="{{ .Params.seoTitle | default .Title }}" />
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.defaultDescription }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:secure_url" content="{{ .Permalink }}" />
+{{- with .Params.images -}}
+  <meta name="og:image" content="{{ index . 0 | absURL }}"/>
+  <meta name="og:image:secure_url" content="{{ index . 0 | absURL }}"/>
+{{- else -}}
+{{- with .Params.banner -}}
+    <meta name="og:image" content="{{ . | absURL }}"/>
+    <meta name="og:image:secure_url" content="{{ . | absURL }}"/>
+{{- else -}}
+  <meta name="og:image" content="{{ .Site.Params.defaultImage | absURL }}"/>
+  <meta name="og:image:secure_url" content="{{ .Site.Params.defaultImage | absURL }}"/>
+{{- end -}}
+{{- end -}}
+<meta name="og:image:alt" content="{{ .Params.bannerTitle | default .Params.seoTitle | default .Title }}"/>
+{{- if .IsPage -}}
+{{- if not .PublishDate.IsZero -}}
+    <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
+{{- else if not .Date.IsZero -}}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
+{{- end -}}
+{{- if not .Lastmod.IsZero -}}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
+{{- end -}}
+{{- else -}}
+{{- if not .Date.IsZero -}}
+    <meta property="og:updated_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
+{{- end -}}
+{{- end -}}
+{{- with .Params.audio -}}
+    <meta property="og:audio" content="{{ . }}" />
+{{- end -}}
+{{- with .Params.locale -}}
+    <meta property="og:locale" content="{{ . }}" />
+{{- end -}}
+{{- with .Site.Params.title -}}
+    <meta property="og:site_name" content="{{ . }}" />
+{{- end -}}
+{{- with .Params.videos -}}
+{{- range .Params.videos -}}
+  <meta property="og:video" content="{{ . | absURL }}" />
+{{- end -}}
+{{- end -}}
+{{- $permalink := .Permalink -}}
+{{- $siteSeries := .Site.Taxonomies.series -}}{{- with .Params.series -}}
+{{- range $name := . -}}
+  {{- $series := index $siteSeries $name -}}
+  {{- range $page := first 6 $series.Pages -}}
+    {{- if ne $page.Permalink $permalink -}}
+    <meta property="og:see_also" content="{{ $page.Permalink }}" />
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
+{{- if .IsPage -}}
+<meta property="article:author" content="https://www.facebook.com/{{ .Site.Social.facebook }}" />
+<meta property="article:publisher" content="https://www.facebook.com/{{ .Site.Social.facebook }}" />
+<meta property="article:section" content="{{ .Section }}" />
+{{- with .Params.tags -}}
+{{- range first 6 . -}}
+  <meta property="article:tag" content="{{ . }}" />
+{{- end -}}
+{{- end -}}
+{{- end -}}

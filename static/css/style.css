@@ -696,35 +696,6 @@ code {
 #profile .inner .base-info #follow:hover {
   background: #49c8fb;
 }
-#profile .inner .article-info {
-  padding: 0px;
-}
-#profile .inner .article-info:before,
-#profile .inner .article-info:after {
-  content: "";
-  display: table;
-}
-#profile .inner .article-info:after {
-  clear: both;
-}
-#profile .inner .article-info .article-info-block {
-  width: 50%;
-  float: left;
-  padding: 20px 15px;
-  text-align: center;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  font-size: 20px;
-}
-#profile .inner .article-info .article-info-block span {
-  display: block;
-  font-size: 14px;
-  text-transform: uppercase;
-}
-#profile .inner .article-info .article-info-block:first-child {
-  border-right: 1px solid #eceff2;
-}
 #profile .inner .social-links > table {
   width: 100%;
 }

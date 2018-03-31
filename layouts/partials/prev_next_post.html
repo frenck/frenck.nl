@@ -1,22 +1,16 @@
-{{ if and (or .PrevInSection .NextInSection) (not .Params.noprevnext) }}
+{{- if and (or .PrevInSection .NextInSection) (not .Params.noprevnext) -}}
 <nav id="article-nav">
-    {{ if .NextInSection }}
-    <a href="{{ .NextInSection.Permalink }}" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">
-            Next article  »
-        </strong>
+    {{- if .NextInSection -}}
+    <a href="{{ .NextInSection.Permalink }}" id="article-nav-newer" class="article-nav-link-wrap" title="Next article">
+        <strong class="article-nav-caption">Next article  »</strong>
         <div class="article-nav-title">{{ .NextInSection.Title }}</div>
     </a>
-    {{ end }}
-
-    {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.Permalink }}" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">
-        « Previous article
-      </strong>
-      <div class="article-nav-title">{{ .PrevInSection.Title }}</div>
+    {{- end -}}
+    {{- if .PrevInSection -}}
+    <a href="{{ .PrevInSection.Permalink }}" id="article-nav-older" class="article-nav-link-wrap" title="Previous artcile">
+      <strong class="article-nav-caption">« Previous article</strong>
+      <div class="article-nav-title">{{- .PrevInSection.Title -}}</div>
     </a>
-    {{ end }}
-
+    {{- end -}}
 </nav>
-{{ end }}
+{{- end -}}

@@ -1,20 +1,20 @@
-{{ if isset .Site.Taxonomies "categories" }}
-{{ if not (eq (len .Site.Taxonomies.categories) 0) }}
+{{- if isset .Site.Taxonomies "categories" -}}
+{{- if not (eq (len .Site.Taxonomies.categories) 0) -}}
 <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
         <ul class="category-list">
-            {{ range $name, $items := .Site.Taxonomies.categories }}
+            {{- range $name, $items := .Site.Taxonomies.categories -}}
             <li class="category-list-item">
-                {{ $url := printf "%s/%s" "categories" ($name | urlize | lower)}}
-                <a class="category-list-link" href="{{ $url | relURL }}">
-                    {{ $name }}
+                {{- $url := printf "%s/%s" "categories" ($name | urlize | lower) -}}
+                <a class="category-list-link" href="{{ $url | relURL }}" title="View more articles in {{ $name }}">
+                    {{- $name -}}
                 </a>
                 <span class="category-list-count">{{ len $items }}</span>
             </li>
-            {{ end }}
+            {{- end -}}
         </ul>
     </div>
 </div>
-{{ end }}
-{{ end }}
+{{- end -}}
+{{- end -}}

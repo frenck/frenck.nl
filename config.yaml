@@ -1,0 +1,100 @@
+---
+baseurl: https://www.frenck.nl/
+title: "Frenck.nl"
+footnotereturnlinkcontents: "↩"
+enableRobotsTXT: true
+canonifyURLs: true
+enableEmoji: true
+enableGitInfo: true
+languageCode: en
+metaDataFormat: yaml
+summaryLength: 70
+description: Test vauit de Config
+keywords:
+  - test
+  - henk
+
+blackfriday:
+  hrefTargetBlank = true
+
+permalinks:
+  post: "/:sections/:slug"
+  taxonomies:
+    tag: tags
+    category: categories
+    series: series
+
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: keywords
+      weight: 100
+    - name: author
+      weight: 0
+    - name: tags
+      weight: 150
+    - name: date
+      weight: 25
+      pattern: 2006
+
+sitemap:
+  changefreq: monthly
+  priority: 0.5
+  filename: sitemap.xml
+
+social:
+  github: frenck
+  twitter: frenck
+  linkedin: frenck
+  reddit: frenck_nl
+  facebook: frenck.nl
+  discourse: frenck
+  keybase: frenck
+  googleplus: FranckNijhof
+  instagram: frenck
+
+menu:
+  main:
+    - before: true
+      label: Home
+      link: "/"
+    - name: About me
+      pre: "<i class='fa fa-heart'></i>"
+      weight: -110
+      identifier: about
+      url: "/about/franck-nijhof"
+
+params:
+  defaultTitle: The Internet of Things
+  defaultDescription: "Homepage of Franck Nijhof, #HomeAssistant enthusiast, Hass.io add-on creator, #IoT explorer, #DevOps preacher, #GPG evangelist, and slightly assholic at first sight"
+  defaultKeywords:
+    - IoT
+    - Internet of Things
+    - Home Assistant
+    - Home Automation
+    - DIY
+    - Hassio
+    - hassio-addons
+    - Tutorial    
+  defaultImage: /images/avatar-400x400.jpg
+  twitterDomain: Frenck.nl
+  author: Franck Nijhof
+  avatar: /images/franck-nijhof.jpg
+  familyName: Nijhof
+  givenName: Franck
+  nickName: Frenck
+  gender: Male
+  height: 182 cm
+  birthDate: 1982-05-31
+  jobTitle: Software Engineer
+  nationality: Dutch
+  email: hello@frenck.nl
+  city: Enschede
+  country: The Netherlands
+  bio: "#HomeAssistant enthusiast, Hass.io add-on creator, #IoT explorer, #DevOps preacher, #GPG evangelist, slightly assholic at first sight"
+  gpgkey: AB33ADACE7101952
+  ghrepo: "https://github.com/frenck/frenck.nl"
+  themeColor: "#067bc2"
+

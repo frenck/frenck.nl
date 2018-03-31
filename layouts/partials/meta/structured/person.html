@@ -1,0 +1,29 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "{{ .Site.Params.author }}",
+        "familyName": "{{ .Site.Params.familyName }}",
+        "givenName": "{{ .Site.Params.givenName }}",
+        "alternateName": "{{ .Site.Params.nickName }}",
+        "email": "mailto:{{ .Site.Params.email }}",
+        "image": "{{ .Site.Params.avatar | absURL }}",
+        "description": "{{ .Site.Params.bio }}",
+        "jobTitle": "{{ .Site.Params.jobTitle }}",
+        "birthPlace": "{{ .Site.Params.city }}, {{ .Site.Params.country }}",
+        "birthDate": "{{ .Site.Params.birthDate }}",
+        "height": "{{ .Site.Params.height }}",
+        "gender": "{{ .Site.Params.gender }}",
+        "nationality": "{{ .Site.Params.nationality }}",
+        "url": "{{ .Site.BaseURL }}",
+        "sameAs": [
+            "https://github.com/{{ .Site.Social.github }}",
+            "https://linkedin.com/in/{{ .Site.Social.linkedin }}",
+            "https://reddit.com/user/{{ .Site.Social.reddit }}",
+            "https://facebook.com/{{ .Site.Social.facebook }}",
+            "https://twitter.com/{{ .Site.Social.twitter }}",
+            "https://keybase.io/{{ .Site.Social.keybase }}",
+            "https://plus.google.com/+{{ .Site.Social.googleplus }}"
+        ]
+    }
+</script>

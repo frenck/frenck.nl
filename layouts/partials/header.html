@@ -1,30 +1,32 @@
 <header id="header">
   <div id="header-main" class="header-inner">
     <div class="outer">
-      <a href="{{ .Site.BaseURL }}" id="logo">
+      <a href="{{ .Site.BaseURL }}" id="logo" title="Click for the hompage">
           <!--<i class="logo"></i>-->
           <span class="site-title">{{ .Site.Title }}</span>
       </a>
       <nav id="main-nav">
-          {{ range .Site.Params.menu }}
-          {{ if .before }}
-          <a class="main-nav-link" href="{{ .link | relURL }}">{{ .label }}</a>
-          {{ end }}
-          {{ end }}
+          {{- range .Site.Params.menu -}}
+          {{- if and .before .link .label -}}
+          <a class="main-nav-link" href="{{ .link | relURL }}" title="{{ .label}}">{{ .label }}</a>
+          {{- end -}}
+          {{- end -}}
 
-          {{ range .Site.Menus.main }}
-          <a class="main-nav-link" href="{{ .URL }}">{{ .Name }}</a>
-          {{ end }}
+          {{- range .Site.Menus.main -}}
+          {{- if and .URL .Name -}}
+          <a class="main-nav-link" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a>
+          {{- end -}}
+          {{- end -}}
 
-          {{ range .Site.Params.menu }}
-          {{ if not .before }}
-          <a class="main-nav-link" href="{{ .link | relURL }}">{{ .label }}</a>
-          {{ end }}
-          {{ end }}
+          {{- range .Site.Params.menu -}}
+          {{- if and (not .before) .link .label -}}
+          <a class="main-nav-link" href="{{ .link | relURL }}" title="{{ .label }} ">{{ .label }}</a>
+          {{- end -}}
+          {{- end -}}
       </nav>
         <nav id="sub-nav">
           <div class="profile" id="profile-nav">
-            <a id="profile-anchor" href="javascript:;"><img class="avatar" src="/images/avatar-128x128.jpg" alt="Frenck / Franck Nijhof"><i class="fa fa-caret-down"></i></a>
+            <a id="profile-anchor" href="javascript:;" title="Click to open menu"><img class="avatar" src="{{ "/images/avatar-40x40.jpg" | relURL }}" alt="Photo of {{ .Site.Params.author }}" title="{{ .Site.Params.author }}"><i class="fa fa-caret-down"></i></a>
           </div>
         </nav>
         <div id="search-form-wrap">
@@ -41,23 +43,25 @@
     <table class="menu outer">
       <tbody>
           <tr>
-          {{ range .Site.Params.menu }}
-          {{ if .before }}
-          <td><a class="main-nav-link" href="{{ .link | relURL }}">{{ .label }}</a></td>
-          {{ end }}
-          {{ end }}
+          {{- range .Site.Params.menu -}}
+          {{- if and .before .link .label -}}
+          <td><a class="main-nav-link" href="{{ .link | relURL }}" title="{{ .label }}">{{ .label }}</a></td>
+          {{- end -}}
+          {{- end -}}
 
-          {{ range .Site.Menus.main }}
-          <td><a class="main-nav-link" href="{{ .URL }}">{{ .Name }}</a></td>
-          {{ end }}
+          {{- range .Site.Menus.main -}}
+          {{- if and .URL .Name -}}
+          <td><a class="main-nav-link" href="{{ .URL }}" title="{{ .Name }}">{{ .Name }}</a></td>
+          {{- end -}}
+          {{- end -}}
 
-          {{ range .Site.Params.menu }}
-          {{ if not .before }}
-          <td><a class="main-nav-link" href="{{ .link  | relURL }}">{{ .label }}</a></td>
-          {{ end }}
-          {{ end }}
+          {{- range .Site.Params.menu -}}
+          {{- if and (not .before) .link .label -}}
+          <td><a class="main-nav-link" href="{{ .link  | relURL }}" title="{{ .label }}">{{ .label }}</a></td>
+          {{- end -}}
+          {{- end -}}
           <td>
-          <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form">
+          <form action="//google.com/§arch" method="get" accept-charset="UTF-8" class="search-form">
           <input type="search" name="q" class="search-form-input" placeholder="Search">
           <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}" />
           </form>

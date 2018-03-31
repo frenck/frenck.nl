@@ -1,0 +1,20 @@
+<meta name="twitter:card" content="summary_large_image"/>
+{{- with .Params.images -}}
+  <meta name="twitter:image" content="{{ index . 0 | absURL }}"/>
+{{- else -}}
+{{- with .Params.banner -}}
+  <meta name="twitter:image" content="{{ . | absURL }}"/>
+{{- else -}}
+  <meta name="twitter:image" content="{{ .Site.Params.defaultImage | absURL }}"/>
+{{- end -}}
+{{- end -}}
+{{- with .Params.seoTitle -}}
+<meta name="twitter:title" content="{{ . }}"/>
+{{- else -}}
+<meta name="twitter:title" content="{{ .Title }}"/>
+{{- end -}}
+<!-- TODO: Description fixes -->
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
+<meta name="twitter:site" content="@{{ .Site.Social.twitter }}"/>
+<meta name="twitter:creator" content="@{{ .Site.Social.twitter }}"/>
+<meta name="twitter:domain" content="{{ .Site.Params.twitterDomain }}"/>
