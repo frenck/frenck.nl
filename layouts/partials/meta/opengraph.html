@@ -2,20 +2,16 @@
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.defaultDescription }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:secure_url" content="{{ .Permalink }}" />
 {{- with .Params.images -}}
-  <meta name="og:image" content="{{ index . 0 | absURL }}"/>
-  <meta name="og:image:secure_url" content="{{ index . 0 | absURL }}"/>
+  <meta property="og:image" content="{{ index . 0 | absURL }}"/>
 {{- else -}}
 {{- with .Params.banner -}}
-    <meta name="og:image" content="{{ . | absURL }}"/>
-    <meta name="og:image:secure_url" content="{{ . | absURL }}"/>
+  <meta property="og:image" content="{{ . | absURL }}"/>
 {{- else -}}
-  <meta name="og:image" content="{{ .Site.Params.defaultImage | absURL }}"/>
-  <meta name="og:image:secure_url" content="{{ .Site.Params.defaultImage | absURL }}"/>
+  <meta property="og:image" content="{{ .Site.Params.defaultImage | absURL }}"/>
 {{- end -}}
 {{- end -}}
-<meta name="og:image:alt" content="{{ .Params.bannerTitle | default .Params.seoTitle | default .Title }}"/>
+<meta property="og:image:alt" content="{{ .Params.bannerTitle | default .Params.seoTitle | default .Title }}"/>
 {{- if .IsPage -}}
 {{- if not .PublishDate.IsZero -}}
     <meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}"/>
