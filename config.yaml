@@ -97,4 +97,5 @@ params:
   gpgkey: AB33ADACE7101952
   ghrepo: "https://github.com/frenck/frenck.nl"
   themeColor: "#067bc2"
+  fbAppId: 238412176192765
 
