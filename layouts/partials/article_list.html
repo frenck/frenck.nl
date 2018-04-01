@@ -3,7 +3,7 @@
 <article class="article article-type-post">
     <div class="article-inner">
         {{- if and (isset .Params "banner") (not (eq .Params.banner "")) -}}
-        <a href="{{ .Permalink }}" title="{{ .seoTitle | default .Title }}">
+        <a href="{{ .Permalink }}" title="{{ .Params.seoTitle | default .Title }}">
             <img src="{{ .Params.banner | relURL }}" class="article-banner" alt="Banner showing {{ .Params.bannerTitle | default .Title }}" title="{{ .Params.bannerTitle | default .Title }}">
         </a>
         {{- end -}}
