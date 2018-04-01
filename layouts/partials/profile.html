@@ -2,8 +2,8 @@
   <div class="inner profile-inner">
     <div class="base-info profile-block">
       <img id="avatar" src="{{ "/images/avatar-128x128.jpg" | relURL }}" alt="Photo of {{ .Site.Params.author }}" title="{{ .Site.Params.author }}">
-      <h2 id="name">"{{ .Site.Params.nickname }}"<br />{{ .Site.Params.author }}</h2>
-      <h3 id="title">{{ .Site.Params.bio }}</h3>
+      <h3 id="name">"{{ .Site.Params.nickname }}"<br />{{ .Site.Params.author }}</h3>
+      <h4 id="title">{{ .Site.Params.bio }}</h4>
       <span id="location"><i class="fa fa-map-marker"></i>
         {{- .Site.Params.city -}}, {{ .Site.Params.country -}}
       </span>

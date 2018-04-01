@@ -1,7 +1,7 @@
 {{ $related := .Site.RegularPages.Related . | first 5 }}
 {{ with $related }}
 <div class="widget-wrap">
-        <h3 class="widget-title">Related articles</h3>
+        <h4 class="widget-title">Related articles</h4>
         <div class="widget">
             <ul id="recent-post">
                 {{ range . }}
