@@ -69,7 +69,7 @@
         {{- end -}}
         ],
         "wordCount": "{{ .WordCount }}",
-        "articleBody": "{{ .Content | safeHTML }}",
+        "articleBody": "{{ .Content | safeJS }}",
         "keywords": "{{ delimit .Keywords ", "}}",
         "articleSection": "{{ .Section }}",
         "discussionUrl": "{{ .Permalink }}#comments"
