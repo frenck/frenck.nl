@@ -1315,6 +1315,7 @@ ol.toc {
 .layout-title {
   font-size: 1.4em;
   margin: 40px 0 20px 0;
+  color: #c9daea;
 }
 @media screen and (max-width: 559px) {
   .archive-year-wrap,

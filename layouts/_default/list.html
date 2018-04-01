@@ -1,11 +1,24 @@
 {{- define "main" -}}
     {{- $context := . -}}
-    {{- with .Content -}}
-        {{- partial "single_article.html" $context -}}
-    {{- else -}}
+    <article id="page-undefined" class="article article-type-page">
+            <div class="article-inner">
+                {{- if and (isset .Params "banner") (not (eq .Params.banner "")) -}}
+                    <img src="{{ .Params.banner | relURL }}" class="article-banner" alt="Banner showing {{ .Params.bannerTitle | default .Title }}" title="{{ .Params.bannerTitle | default .Title }}" class="article-banner">
+                {{- end -}}
+        
+                <header class="article-header">
+                    <a href="{{ .Permalink }}" title="{{ .Params.seoTitle | default .Title }}">
+                        <h1 class="article-title">{{ .Title }}</h1>
+                    </a>
+                </header>    
+                <div class="article-entry">
+                    {{- .Content -}}
+                </div>
+            </div>
+    </article>
     <section class="archives-wrap">
         <div class="archive-category-wrap">
-            <span class="archive-category">{{ .Title }}</span>
+            <span class="archive-category">Articles about: {{ .Title }}</span>
         </div>
         <div class="archives">
             {{- $paginator := .Paginate .Data.Pages -}}
@@ -16,4 +29,3 @@
     </section>
     {{- partial "pagination" . -}}
     {{- end -}}
-{{- end -}}
