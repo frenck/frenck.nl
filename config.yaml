@@ -15,7 +15,7 @@ keywords:
   - henk
 
 blackfriday:
-  hrefTargetBlank = true
+  hrefTargetBlank: true
 
 permalinks:
   post: "/:sections/:slug"
